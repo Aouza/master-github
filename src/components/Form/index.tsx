@@ -19,17 +19,24 @@ const Form: React.FC = () => {
     const handleSubmit = async (
         e: FormEvent<HTMLFormElement>,
     ): Promise<void> => {
-        e.preventDefault();
-        window.scrollTo(0, 400);
-        setIsLoading(true);
-        setSearch('');
-        setIsDetails(false);
-        const response = await api.get(`users/${search}`);
+        try {
+            e.preventDefault();
+            setIsLoading(true);
+            setSearch('');
+            window.scrollTo(0, 400);
+            setIsDetails(false);
+            const response = await api.get(`users/${search}`);
 
-        userData(response.data);
-
-        if (response.data.id) lastUserData(response.data);
-        setIsLoading(false);
+            if (response.status === 200) {
+                userData(response.data);
+                lastUserData(response.data);
+            }
+        } catch (err) {
+            console.log('Error: nenhum dev encontrado');
+            userData(null);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (

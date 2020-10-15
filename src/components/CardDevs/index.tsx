@@ -32,9 +32,9 @@ const CardDevs: React.FC = () => {
     const handDetailsClick = async () => {
         setIsDetails(!isDetails);
 
-        const { data } = await api.get(`/users/${user?.login}/repos`);
+        const response = await api.get(`/users/${user?.login}/repos`);
 
-        setRepos(data);
+        if (response.status === 200) setRepos(response.data);
     };
 
     return (

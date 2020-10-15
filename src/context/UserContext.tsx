@@ -16,7 +16,7 @@ interface UserContextData {
     user: User | null;
     setLastUsers(data: object): void;
     lastUsers: User[];
-    userData(data: object): void;
+    userData(data: object | null): void;
     lastUserData(data: object): void;
     isDetails: boolean;
     setIsDetails(data: boolean): void;
@@ -52,8 +52,12 @@ export const UserProvider: React.FC = ({ children }) => {
         );
     }, [lastUsers]);
 
-    const userData = (data: any) => {
-        setUser(data);
+    const userData = (data: any | null) => {
+        if (data) {
+            setUser(data);
+        } else {
+            setUser(null);
+        }
     };
 
     const lastUserData = (data: any) => {
