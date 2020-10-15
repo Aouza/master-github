@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface LastUsers {
+    headerHeight: boolean;
+}
 
 export const Container = styled.header`
     background-color: var(--color-dark-gray);
@@ -22,7 +26,7 @@ export const Container = styled.header`
     }
 `;
 
-export const UsersNav = styled.nav`
+export const UsersNav = styled.nav<LastUsers>`
     position: relative;
     overflow-x: scroll;
     padding-bottom: 4.5rem;
@@ -38,5 +42,11 @@ export const UsersNav = styled.nav`
 
     @media (max-width: 36rem) {
         height: auto;
+
+        ${props =>
+            !props.headerHeight &&
+            css`
+                padding-bottom: 0;
+            `}
     }
 `;
