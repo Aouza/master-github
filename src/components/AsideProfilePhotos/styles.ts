@@ -21,7 +21,7 @@ export const Container = styled.ul`
         }
 
         flex-direction: row;
-        padding-bottom: 2rem;
+        padding-bottom: 0.5rem;
         overflow-x: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;

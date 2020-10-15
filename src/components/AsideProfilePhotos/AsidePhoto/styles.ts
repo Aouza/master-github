@@ -15,7 +15,10 @@ export const Container = styled.li`
     @media (max-width: 36rem) {
         & + li {
             margin-top: 0;
-            margin-right: 2rem;
+        }
+
+        > li {
+            margin-right: 1rem;
         }
     }
 `;
