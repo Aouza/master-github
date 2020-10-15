@@ -16,6 +16,13 @@ export const Container = styled.div`
         overflow-x: scroll;
         padding-bottom: 6rem;
 
+        > img {
+            width: 5rem;
+            margin: 0 auto 2rem auto;
+            display: block;
+            position: sticky;
+        }
+
         &::-webkit-scrollbar {
             width: 0;
             height: 0;
