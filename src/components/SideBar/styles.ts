@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.header`
     background-color: var(--color-dark-gray);
     padding: 2rem 1rem;
 
@@ -12,9 +12,6 @@ export const Container = styled.div`
 
     @media (max-width: 36rem) {
         padding: 1rem;
-        position: relative;
-        overflow-x: scroll;
-        padding-bottom: 6rem;
 
         > img {
             width: 5rem;
@@ -22,13 +19,24 @@ export const Container = styled.div`
             display: block;
             position: sticky;
         }
+    }
+`;
 
-        &::-webkit-scrollbar {
-            width: 0;
-            height: 0;
-            overflow-x: scroll;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
+export const UsersNav = styled.nav`
+    position: relative;
+    overflow-x: scroll;
+    padding-bottom: 4.5rem;
+    height: calc(100vh - 6rem);
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    @media (max-width: 36rem) {
+        height: auto;
     }
 `;

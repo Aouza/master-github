@@ -50,6 +50,7 @@ export const Container = styled.div<DetailsProps>`
         css`
             > img {
                 width: 0;
+                display: none;
             }
         `}
 

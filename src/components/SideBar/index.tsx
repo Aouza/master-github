@@ -2,13 +2,15 @@ import React from 'react';
 import LogoImage from '../../assets/images/logo.svg';
 import AsideProfilePhotos from '../AsideProfilePhotos';
 
-import { Container } from './styles';
+import { Container, UsersNav } from './styles';
 
 const SideBar: React.FC = () => {
     return (
         <Container>
             <img src={LogoImage} alt="Mestres da Web" />
-            <AsideProfilePhotos />
+            <UsersNav>
+                <AsideProfilePhotos />
+            </UsersNav>
         </Container>
     );
 };
