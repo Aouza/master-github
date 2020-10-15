@@ -22,9 +22,11 @@ const AsideProfilePhotos: React.FC = () => {
         setIsLoading(false);
     };
 
+    var reverseLastUsers = lastUsers.slice(0).reverse();
+
     return (
         <Container>
-            {lastUsers?.reverse().map(user => (
+            {reverseLastUsers?.map(user => (
                 <AsidePhoto
                     key={user.id}
                     avatar={user.avatar_url}

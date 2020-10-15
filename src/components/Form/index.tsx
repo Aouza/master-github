@@ -5,12 +5,14 @@ import SearchButton from './SearchButton';
 import SearchInput from './SearchInput';
 
 import { Container } from './styles';
+import HelpError from '../Helper/HelpError';
 
 const Form: React.FC = () => {
     const { userData, lastUserData, setIsDetails, setIsLoading } = useContext(
         UserContext,
     );
     const [search, setSearch] = useState('');
+    const [error, setError] = useState(false);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
         setSearch(e.target.value);
@@ -30,10 +32,13 @@ const Form: React.FC = () => {
             if (response.status === 200) {
                 userData(response.data);
                 lastUserData(response.data);
+
+                setError(false);
             }
         } catch (err) {
             console.log('Error: nenhum dev encontrado');
             userData(null);
+            setError(true);
         } finally {
             setIsLoading(false);
         }
@@ -50,6 +55,8 @@ const Form: React.FC = () => {
                 onChange={handleChange}
             />
             <SearchButton />
+
+            {error && <HelpError>NENHUM DESENVOLVEDOR ENCONTRADO.</HelpError>}
         </Container>
     );
 };

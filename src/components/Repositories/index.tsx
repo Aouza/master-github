@@ -10,7 +10,7 @@ interface Repos {
 const Repositories: React.FC<Repos> = ({ repos }) => {
     return (
         <Container>
-            {repos?.map((repo: any) => (
+            {repos?.reverse().map((repo: any) => (
                 <Repository key={repo.id} details={repo} />
             ))}
         </Container>
