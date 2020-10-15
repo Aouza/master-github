@@ -142,6 +142,7 @@ export const IconsGroup = styled.div`
         align-items: center;
         opacity: 0.8;
         letter-spacing: 1px;
+        flex-wrap: wrap;
 
         &:first-child {
             svg:first-child {

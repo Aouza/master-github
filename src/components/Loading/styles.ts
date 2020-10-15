@@ -14,4 +14,8 @@ export const Container = styled.div`
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 6px;
+
+    @media (max-width: 36rem) {
+        font-size: 1.4rem;
+    }
 `;

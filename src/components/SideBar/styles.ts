@@ -12,5 +12,16 @@ export const Container = styled.div`
 
     @media (max-width: 36rem) {
         padding: 1rem;
+        position: relative;
+        overflow-x: scroll;
+        padding-bottom: 6rem;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            overflow-x: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
     }
 `;
