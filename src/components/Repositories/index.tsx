@@ -11,7 +11,7 @@ const Repositories: React.FC<Repos> = ({ repos }) => {
     return (
         <Container>
             {repos?.map((repo: any) => (
-                <Repository key={repo} details={repo} />
+                <Repository key={repo.id} details={repo} />
             ))}
         </Container>
     );

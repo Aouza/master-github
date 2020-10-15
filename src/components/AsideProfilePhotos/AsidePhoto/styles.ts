@@ -17,8 +17,6 @@ export const Container = styled.li`
             margin-top: 0;
         }
 
-        > li {
-            margin-right: 1rem;
-        }
+        margin-right: 2rem;
     }
 `;
