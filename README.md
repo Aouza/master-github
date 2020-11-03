@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Mestres da Web" src="./.github/logo-negativo.png" />
+    <img alt="Mestres da Web" width="60%" src="./.github/logo-negativo.png" />
     <br>
     Mestres da Web
 </h1>
